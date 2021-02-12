@@ -9,23 +9,37 @@
               <li class="breadcrumb-item active">
                 <a href="javascript: void(0);">Home</a>
               </li>
-              <!-- <li class="breadcrumb-item">
-                        <a href="javascript: void(0);">Pages</a>
-                      </li>
-                      <li class="breadcrumb-item active">Starter</li> -->
+              <!-- 
+              <li class="breadcrumb-item">
+                <a href="javascript: void(0);">Pages</a>
+              </li>
+              <li class="breadcrumb-item active">Starter</li>
+              -->
             </ol>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="btn-group mr-1 float-left">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="mdi mdi-plus-circle mr-1"></i>
+            Nova
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Turma</a>
+            <a class="dropdown-item" href="#">Pasta</a>
+          </div>
+    </div>
+
     <div id="folders" class="row mb-2 flex-nowrap">
-      <div class="col-auto">
-        <a href="javascript:void(0);" class="btn btn-primary mb-2"
-          ><i class="mdi mdi-plus-circle mr-2"></i>Nova</a
-        >
-      </div>
-      
+
       <div class="col-auto">
         <a href="javascript:void(0);" class="btn btn-white mb-2"
           ><i class="mdi mdi-folder mr-2"></i>1º Semestre</a
@@ -51,7 +65,16 @@
           ><i class="mdi mdi-folder mr-2"></i>5º Semestre</a
         >
       </div>
-
+      <div class="col-auto">
+        <a href="javascript:void(0);" class="btn btn-white mb-2"
+          ><i class="mdi mdi-folder mr-2"></i>6º Semestre</a
+        >
+      </div>
+      <div class="col-auto">
+        <a href="javascript:void(0);" class="btn btn-white mb-2"
+          ><i class="mdi mdi-folder mr-2"></i>7º Semestre</a
+        >
+      </div>
     </div>
 
     <div class="row">
@@ -66,13 +89,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i class="mdi mdi-dots-vertical font-20"></i>
+                <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
               </a>
 
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Mover</a>
+                <a class="dropdown-item" href="#">Arquivar</a>
               </div>
             </div>
           </div>
@@ -80,6 +102,42 @@
             style="margin-top: -31px"
             class="card-img-top img-fluid"
             src="../assets/images/small/img-2.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Análise e Projeto de Sistemas</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-sm-4">
+        <div class="card">
+          <div>
+            <div class="dropdown float-right" style="">
+              <a
+                class="text-body dropdown-toggle"
+                href="#"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Mover</a>
+                <a class="dropdown-item" href="#">Arquivar</a>
+              </div>
+            </div>
+          </div>
+          <img
+            style="margin-top: -31px"
+            class="card-img-top img-fluid"
+            src="../assets/images/small/img-3.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -103,50 +161,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i class="mdi mdi-dots-vertical font-20"></i>
+                <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
               </a>
 
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-          <img
-            style="margin-top: -31px"
-            class="card-img-top img-fluid"
-            src="../assets/images/small/img-3.jpg"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Tópicos de Direito Público e Privado</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-sm-4">
-        <div class="card">
-          <div>
-            <div class="dropdown float-right" style="">
-              <a
-                class="text-body dropdown-toggle"
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="mdi mdi-dots-vertical font-20"></i>
-              </a>
-
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Mover</a>
+                <a class="dropdown-item" href="#">Arquivar</a>
               </div>
             </div>
           </div>
@@ -157,7 +177,7 @@
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Inteligência Artificial</h5>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -177,13 +197,12 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i class="mdi mdi-dots-vertical font-20"></i>
+                <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
               </a>
 
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Mover</a>
+                <a class="dropdown-item" href="#">Arquivar</a>
               </div>
             </div>
           </div>
@@ -194,44 +213,7 @@
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-sm-4">
-        <div class="card">
-          <div>
-            <div class="dropdown float-right" style="">
-              <a
-                class="text-body dropdown-toggle"
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="mdi mdi-dots-vertical font-20"></i>
-              </a>
-
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-          <img
-            style="margin-top: -31px"
-            class="card-img-top img-fluid"
-            src="../assets/images/small/img-6.jpg"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Sistemas Distribuídos</h5>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -248,7 +230,7 @@ export default {};
 </script>
 
 <style lang="scss">
-  #folders {
-    overflow: auto;
-  }
+#folders {
+  overflow: auto;
+}
 </style>

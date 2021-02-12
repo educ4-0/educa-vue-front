@@ -6,15 +6,15 @@
     Entre na melhor plataforma educacional online.
   </p>
 
-  <button class="btn btn-primary btn-block" @click.prevent="signin()">
+  <button class="btn btn-light btn-block waves-effect" @click.prevent="signin()">
     <i class="mdi mdi-google mr-1"></i>
     Entre com o Google
   </button>
-  <button class="btn btn-primary btn-block" @click.prevent="signin()">
+  <button class="btn btn-light btn-block waves-effect">
     <i class="mdi mdi-apple mr-1"></i>
     Entre com a Apple
   </button>
-  <button class="btn btn-primary btn-block" @click.prevent="signin()">
+  <button class="btn btn-light btn-block waves-effect">
     <i class="mdi mdi-facebook mr-1"></i>
     Entre com o Facebook
   </button>
