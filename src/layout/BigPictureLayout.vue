@@ -28,8 +28,8 @@
               <a href="index.html" class="logo logo-dark text-center">
                 <span class="logo-lg">
                   <img
-                    src="@/assets/images/logo-dark.png"
-                    srcset="@/assets/images/logo-dark.png"
+                    src="@/assets/images/letter-educa.png"
+                    srcset="@/assets/images/letter-educa.png"
                     alt=""
                     height="22"
                   />
@@ -82,6 +82,9 @@ export default {
 
 <style lang="scss">
     .auth-fluid {
-        background: url("../assets/images/laptop-3087585_1280.jpg") !important;
+        background-image: url("../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg") !important;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
     }
 </style>>
