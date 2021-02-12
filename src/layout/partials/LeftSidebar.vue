@@ -702,3 +702,10 @@
   </div>
   <!-- Left Sidebar End -->
 </template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss">
+</style>
