@@ -93,8 +93,8 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Mover</a>
-                <a class="dropdown-item" href="#">Arquivar</a>
+                <a class="dropdown-item" href="#"> Mover </a>
+                <a class="dropdown-item" href="#"> Arquivar </a>
               </div>
             </div>
           </div>
