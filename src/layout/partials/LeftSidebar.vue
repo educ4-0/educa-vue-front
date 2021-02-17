@@ -71,7 +71,33 @@
       <!--- Sidemenu -->
       <div id="sidebar-menu">
         <ul id="side-menu">
-          <li class="menu-title">Navigation</li>
+          <li class="menu-title"> Visualização </li>
+          <li>
+            <a
+              class="waves-effect"
+            >
+              <i class="ri-home-2-line"></i>
+              <span> Classrooms </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="waves-effect"
+            >
+              <i class="ri-dashboard-line"></i>
+              <span> Dashboards </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="waves-effect"
+            >
+              <i class="ri-calendar-2-line"></i>
+              <span> Calendário </span>
+            </a>
+          </li>
+
+          <!-- <li class="menu-title">Navigation</li>
 
           <li>
             <a
@@ -691,7 +717,7 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
       <!-- End Sidebar -->
