@@ -1,0 +1,42 @@
+<template>
+  <div class="container-fluid">
+    <div class="row justify-content-center my-5">
+      <div class="col-lg-6 col-xl-4 mb-4">
+        <div class="error-text-box">
+          <svg viewBox="0 0 600 200">
+            <symbol id="s-text">
+              <text text-anchor="middle" x="50%" y="50%" dy=".35em">404!</text>
+            </symbol>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+          </svg>
+        </div>
+        <div class="text-center">
+          <h3 class="mt-0 mb-2">Whoops! Página não Encontrada</h3>
+          <p class="text-muted mb-3">
+            Parece que você pegou o caminho errado. Não se preocupe ... isso
+            acontece com o melhor de nós. Você pode querer verificar sua conexão
+            com a Internet. Aqui está uma pequena dica que pode ajudá-lo a
+            voltar aos trilhos.
+          </p>
+
+          <router-link to="/">
+            <button class="btn btn-success waves-effect waves-light">
+              Voltar a Home
+            </button>
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>

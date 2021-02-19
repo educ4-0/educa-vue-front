@@ -75,7 +75,7 @@
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title"> {{ c.name }} </h5>
+            <h5 class="card-title text-truncate"> {{ c.name }} </h5>
             <p class="card-text">
               {{ c.description }}
             </p>
@@ -115,7 +115,11 @@ export default {
         { name: "2º Semestre" },
         { name: "3º Semestre" },
         { name: "4º Semestre" },
-        { name: "5º Semestre" }
+        { name: "5º Semestre" },
+        { name: "6º Semestre" },
+        { name: "7º Semestre" },
+        { name: "8º Semestre" },
+        { name: "9º Semestre" },
       ],
       classrooms: [
         {
@@ -138,8 +142,8 @@ export default {
     }
   },
   mounted() {
-    document.getElementsByTagName("body")[0].setAttribute("data-sidebar-size", "compact");
-  }
+    // document.getElementsByTagName("body")[0].setAttribute("data-sidebar-size", "compact");
+  },
 };
 </script>
 

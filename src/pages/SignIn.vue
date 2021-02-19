@@ -26,8 +26,17 @@
 export default {
   methods: {
     async signin() {
-      const authCode = await this.$gAuth.getAuthCode()
-      console.log(authCode)
+      const googleUser = await this.$gAuth.signIn();
+      const idToken = googleUser.uc.id_token;
+      localStorage.setItem("token", idToken);
+      localStorage.setItem("token_type", "Google");
+      this.$http.post("https://952717f90436.ngrok.io/auth/google", {}, {
+        withCredentials: true,
+        headers: {
+          "Authorization": 'Google ' + idToken
+        },
+      });
+      this.$router.push({ name: 'classrooms'});
     }
   }
 };
