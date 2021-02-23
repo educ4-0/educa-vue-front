@@ -13,12 +13,16 @@ import router from "./router/index";
 import i18n from "./i18n"
 import './registerServiceWorker'
 
-import GAuth from 'vue-google-oauth2'
+// import GAuth from 'vue-google-oauth2'
 const gauthOption = {
   clientId: "310551170823-9pjkdouq7jq56o5cotrde3pmakq3bqmu.apps.googleusercontent.com"
 }
+// Vue.use(GAuth, gauthOption);
+
+import GAuth from './services/gAuth'
 
 Vue.use(GAuth, gauthOption);
+
 Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
 Vue.use(VueAxios, axios);

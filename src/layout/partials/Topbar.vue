@@ -421,7 +421,7 @@
             <div class="dropdown-divider"></div>
 
             <!-- item-->
-            <a @click.prevent="logout()" class="dropdown-item notify-item btn">
+            <a @click.prevent="handleLogout()" class="dropdown-item notify-item btn">
               <i class="ri-logout-box-line"></i>
               <span>Logout</span>
             </a>
@@ -651,6 +651,7 @@
 </template>
 
 <script>
+import { isLoggedIn, getUser, logout } from '../../services/auth';
 export default {
   data() {
     return {
@@ -658,27 +659,17 @@ export default {
     };
   },
   created() {
-    const token = localStorage.getItem("token");
-    const token_type = localStorage.getItem("token_type");
-    if (!token) {
+    console.log(isLoggedIn());
+    if(!isLoggedIn()) {
       this.$router.push({ name: "signin" });
       return;
     }
-    this.$http
-      .get("https://952717f90436.ngrok.io/users/me", {
-        withCredentials: true,
-        headers: {
-          Authorization: `${token_type} ${token}`,
-        },
-      })
-      .then((res) => {
-        this.user = res.data;
-      });
+    console.log(getUser());
+    this.user = getUser();
   },
   methods: {
-    logout() {
-      localStorage.clear();
-      this.$router.push({ name: "signin" });
+    handleLogout() {
+      logout();
     },
   },
 };

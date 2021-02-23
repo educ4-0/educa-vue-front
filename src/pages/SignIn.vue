@@ -6,7 +6,7 @@
     Entre na melhor plataforma educacional online.
   </p>
 
-  <button class="btn btn-light btn-block waves-effect" @click.prevent="signin()">
+  <button class="btn btn-light btn-block waves-effect" @click.prevent="handleLogin()">
     <i class="mdi mdi-google mr-1"></i>
     Entre com o Google
   </button>
@@ -23,20 +23,13 @@
 </template>
 
 <script>
+// import { isLoggedIn, login, logout } from '../services/auth';
 export default {
   methods: {
-    async signin() {
-      const googleUser = await this.$gAuth.signIn();
-      const idToken = googleUser.uc.id_token;
-      localStorage.setItem("token", idToken);
-      localStorage.setItem("token_type", "Google");
-      this.$http.post("https://952717f90436.ngrok.io/auth/google", {}, {
-        withCredentials: true,
-        headers: {
-          "Authorization": 'Google ' + idToken
-        },
-      });
-      this.$router.push({ name: 'classrooms'});
+    async handleLogin() {
+      console.log(this.$gAuth.signIn());
+      // login();
+      // this.$router.push({ name: "classrooms" });
     }
   }
 };
