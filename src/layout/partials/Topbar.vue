@@ -651,7 +651,7 @@
 </template>
 
 <script>
-import { isLoggedIn, getUser, logout } from '../../services/auth';
+import { isLoggedIn, getUser, logout } from '../../services/oauth';
 export default {
   data() {
     return {
@@ -659,17 +659,18 @@ export default {
     };
   },
   created() {
-    console.log(isLoggedIn());
     if(!isLoggedIn()) {
       this.$router.push({ name: "signin" });
       return;
     }
-    console.log(getUser());
-    this.user = getUser();
+    getUser().then((res) => {
+      this.user = res;
+    });
   },
   methods: {
     handleLogout() {
       logout();
+      this.$router.push({ name: "signin" });
     },
   },
 };
