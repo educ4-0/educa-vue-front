@@ -21,15 +21,34 @@
       </div>
     </div>
 
+  
+    <div class="d-flex">
+      <h4 class="mr-auto p-2">Criação de página simples</h4>
+      <div class="p-2"><i class="fe-check-square mr-1"></i>Marcar como concluído</div>
+    <div class="dropdown float-right" style="">
+              <a
+                class="text-body dropdown-toggle"
+                href="#"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="mdi mdi-dots-vertical font-20 mr-1 text-black"></i>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Opção1</a>
+                <a class="dropdown-item" href="#">Opção2</a>
+              </div>
+            </div>
+          
+    </div>
     <div class="row">
-    <div class="col-8">
-          <h4 class="hearder-tittle"> Criação de página simples</h4>
-          <!-- <p class="sub-header font-13"> Subtítulo </p> -->
-          <i class="fe-check-square mr-1"></i> Marcar como concluído
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.youtube.com/watch?v=KcPszmtF8cI" class="embed-responsive-item"></iframe>
-    </div>
-    </div>
+     <div class="col-8">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.youtube.com/watch?v=KcPszmtF8cI" class="embed-responsive-item"></iframe>
+         </div>
+     </div>
     </div>
 
     <div class="clearfix mt-4">  </div>

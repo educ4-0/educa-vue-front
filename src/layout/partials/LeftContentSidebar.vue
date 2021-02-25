@@ -18,83 +18,41 @@
           <img src="@/assets/images/logo-sm.png" alt="" height="24" />
         </span>
         <span class="logo-lg">
-          <img src="@/assets/images/logo-e4-light.png" alt="" height="30" />
+          <img src="@/assets/images/logo-light.png" alt="" height="20" />
         </span>
       </a>
     </div>
 
     <div class="h-100" data-simplebar>
-      <!-- User box -->
-      <div class="user-box text-center">
-        <img
-          src="@/assets/images/users/avatar-1.jpg"
-          alt="user-img"
-          title="Mat Helme"
-          class="rounded-circle avatar-md"
-        />
-        <div class="dropdown">
-          <a
-            href="javascript: void(0);"
-            class="text-reset dropdown-toggle h5 mt-2 mb-1 d-block"
-            data-toggle="dropdown"
-            >Nik Patel</a
-          >
-          <div class="dropdown-menu user-pro-dropdown">
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="fe-user mr-1"></i>
-              <span>My Account</span>
-            </a>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="fe-settings mr-1"></i>
-              <span>Settings</span>
-            </a>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="fe-lock mr-1"></i>
-              <span>Lock Screen</span>
-            </a>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="fe-log-out mr-1"></i>
-              <span>Logout</span>
-            </a>
-          </div>
-        </div>
-        <p class="text-reset">Admin Head</p>
-      </div>
 
       <!--- Sidemenu -->
       <div id="sidebar-menu">
         <ul id="side-menu">
-          <li class="menu-title"> Visualização </li>
+          <li class="menu-title">Conteúdo</li>
           <li>
-            <a
-              class="waves-effect"
-            >
-              <i class="ri-home-2-line"></i>
-              <span> Classrooms </span>
+            <a href="#contentWeek" data-toggle="collapse" class="waves-effect">
+              <span> Preparação </span>
             </a>
-          </li>
-          <li>
-            <a
-              class="waves-effect"
-            >
-              <i class="ri-dashboard-line"></i>
-              <span> Dashboards </span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="waves-effect"
-            >
-              <i class="ri-calendar-2-line"></i>
-              <span> Calendário </span>
-            </a>
+            <div class="collapse show" id="contentWeek">
+              <ul class="nav-second-level">
+                <li>
+                  <a href="" style="margin-left: -30px">
+                    <i class="ri-video-line"></i>
+                    Configurando Ambiente
+                  </a>
+                </li>
+                <li>
+                  <a href="" style="margin-left: -30px">
+                    <i class="ri-dashboard-line"></i> Preparando a Prancheta </a>
+                </li>
+                <li>
+                  <a href="" style="margin-left: -30px">
+                    <i class="ri-dashboard-line"></i>
+                    Pondo as Mãos na Massa
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <!-- <li class="menu-title">Navigation</li>
@@ -730,7 +688,7 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss">

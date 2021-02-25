@@ -6,7 +6,7 @@
     Entre na melhor plataforma educacional online.
   </p>
 
-  <button class="btn btn-light btn-block waves-effect" @click.prevent="signin()">
+  <button class="btn btn-light btn-block waves-effect" @click.prevent="handleLogin()">
     <i class="mdi mdi-google mr-1"></i>
     Entre com o Google
   </button>
@@ -23,11 +23,18 @@
 </template>
 
 <script>
+import { isLoggedIn, login } from '../services/oauth';
 export default {
+  created() {
+    if(isLoggedIn()) {
+      this.$router.push({ name: "classrooms" });
+    }
+  },
   methods: {
-    async signin() {
-      const authCode = await this.$gAuth.getAuthCode()
-      console.log(authCode)
+    handleLogin() {
+      login().then(() => {
+        this.$router.push({ name: "classrooms" });
+      });
     }
   }
 };

@@ -385,21 +385,12 @@
             aria-haspopup="false"
             aria-expanded="false"
           >
-            <img
-              src="@/assets/images/users/avatar-1.jpg"
-              alt="user-image"
-              class="rounded-circle"
-            />
+            <img :src="user.picture" :alt="user.name" class="rounded-circle" />
             <span class="pro-user-name ml-1">
-              Nik Patel <i class="mdi mdi-chevron-down"></i>
+              {{ user.name }} <i class="mdi mdi-chevron-down"></i>
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-            <!-- item-->
-            <div class="dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Welcome !</h6>
-            </div>
-
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-account-circle-line"></i>
@@ -430,7 +421,7 @@
             <div class="dropdown-divider"></div>
 
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <a @click.prevent="handleLogout()" class="dropdown-item notify-item btn">
               <i class="ri-logout-box-line"></i>
               <span>Logout</span>
             </a>
@@ -658,3 +649,29 @@
   </div>
   <!-- end Topbar -->
 </template>
+
+<script>
+import { isLoggedIn, getUser, logout } from '../../services/oauth';
+export default {
+  data() {
+    return {
+      user: {},
+    };
+  },
+  created() {
+    if(!isLoggedIn()) {
+      this.$router.push({ name: "signin" });
+      return;
+    }
+    getUser().then((res) => {
+      this.user = res;
+    });
+  },
+  methods: {
+    handleLogout() {
+      logout();
+      this.$router.push({ name: "signin" });
+    },
+  },
+};
+</script>
