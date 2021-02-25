@@ -1,18 +1,15 @@
-// import Vue from 'vue';
-import decode from 'jwt-decode';
-import axios from 'axios';
-import router from 'vue-router';
+// import Vue from 'vue'
+// import GAuth from 'vue-google-oauth2'
+// import decode from 'jwt-decode';
+// import axios from 'axios';
 
-const ID_TOKEN_KEY = 'id_token';
-const ACCESS_TOKEN_KEY = 'access_token';
-const TOKEN_TYPE_KEY = 'token_type';
+// const ID_TOKEN_KEY = 'id_token';
+// const ACCESS_TOKEN_KEY = 'access_token';
+// const TOKEN_TYPE_KEY = 'token_type';
 
-// const BASE_URL = 'https://cb229c7b1e61.ngrok.io';
-const BASE_URL = 'localhost:9000';
+// const BASE_URL = 'https://93ead96b7525.ngrok.io';
 
-const CLIENT_ID = '310551170823-9pjkdouq7jq56o5cotrde3pmakq3bqmu.apps.googleusercontent.com';
-
-const REDIRECT_NAME = 'classrooms';
+// const CLIENT_ID = '310551170823-9pjkdouq7jq56o5cotrde3pmakq3bqmu.apps.googleusercontent.com';
 
 // const gauthOption = {
 //   clientId: CLIENT_ID
@@ -20,98 +17,104 @@ const REDIRECT_NAME = 'classrooms';
 
 // Vue.use(GAuth, gauthOption);
 
-export async function login() {
-  const googleUser = await this.$gAuth.signIn();
-  const idToken = googleUser.uc.id_token;
-  const accessToken = googleUser.uc.access_token;
+// let $this = new Vue();
 
-  setIdToken(idToken);
-  setAccessToken(accessToken);
-  setTokenType("Google");
+// export async function login() {
+  
+//   const googleUser = await $this.$gAuth.signIn();
 
-  axios.post(BASE_URL + '/auth/google', {}, {
-    withCredentials: true,
-    headers: {
-      "Authorization": 'Google ' + getIdToken()
-    }
-  });
-  router.push({ name: REDIRECT_NAME });
-};
+//   if(!$this.$gAuth.isAuthorized) {
+//     return Promise.reject('Usuário não autenticado');
+//   }
 
-export function logout() {
-  clearIdToken();
-  clearAccessToken();
-  clearTokenType();
-  router.push({ name: REDIRECT_NAME });
-}
+//   const idToken = googleUser.uc.id_token;
+//   const accessToken = googleUser.uc.access_token;
 
-export function getUser() {
-  axios.get(BASE_URL + '/users/me', {
-    withCredentials: true,
-    headers: {
-      Authorization: `${getTokenType()} ${getIdToken()}`,
-    },
-  })
-    .then((res) => {
-      console.log(res);
-      return res.data;
-    });
-}
+//   setIdToken(idToken);
+//   setAccessToken(accessToken);
+//   setTokenType("Google");
 
-export function getIdToken() {
-  return localStorage.getItem(ID_TOKEN_KEY);
-}
+//   return axios.post(BASE_URL + '/auth/google', {}, {
+//     withCredentials: true,
+//     headers: {
+//       "Authorization": 'Google ' + getIdToken()
+//     }
+//   });
+  
+// };
 
-export function getAccessToken() {
-  return localStorage.getItem(ACCESS_TOKEN_KEY);
-}
+// export function logout() {
+//   clearIdToken();
+//   clearAccessToken();
+//   clearTokenType();
+// }
 
-export function getTokenType() {
-  return localStorage.getItem(TOKEN_TYPE_KEY);
-}
+// export function getUser() {
+//   axios.get(BASE_URL + '/users/me', {
+//     withCredentials: true,
+//     headers: {
+//       Authorization: `${getTokenType()} ${getIdToken()}`,
+//     },
+//   })
+//     .then((res) => {
+//       return res.data;
+//     });
+// }
 
-function clearIdToken() {
-  localStorage.removeItem(ID_TOKEN_KEY);
-}
+// export function getIdToken() {
+//   return localStorage.getItem(ID_TOKEN_KEY);
+// }
 
-function clearAccessToken() {
-  localStorage.removeItem(ACCESS_TOKEN_KEY);
-}
+// export function getAccessToken() {
+//   return localStorage.getItem(ACCESS_TOKEN_KEY);
+// }
 
-function clearTokenType() {
-  localStorage.removeItem(TOKEN_TYPE_KEY);
-}
+// export function getTokenType() {
+//   return localStorage.getItem(TOKEN_TYPE_KEY);
+// }
 
-// Get and store access_token in local storage
-export function setAccessToken(accessToken) {
-  localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
-}
+// function clearIdToken() {
+//   localStorage.removeItem(ID_TOKEN_KEY);
+// }
 
-// Get and store id_token in local storage
-export function setIdToken(idToken) {
-  localStorage.setItem(ID_TOKEN_KEY, idToken);
-}
+// function clearAccessToken() {
+//   localStorage.removeItem(ACCESS_TOKEN_KEY);
+// }
 
-export function setTokenType(tokenType) {
-  localStorage.setItem(TOKEN_TYPE_KEY, tokenType);
-}
+// function clearTokenType() {
+//   localStorage.removeItem(TOKEN_TYPE_KEY);
+// }
 
-export function isLoggedIn() {
-  const idToken = getIdToken();
-  return !!idToken && !isTokenExpired(idToken);
-}
+// // Get and store access_token in local storage
+// export function setAccessToken(accessToken) {
+//   localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
+// }
 
-function getTokenExpirationDate(encodedToken) {
-  const token = decode(encodedToken);
-  if (!token.exp) { return null; }
+// // Get and store id_token in local storage
+// export function setIdToken(idToken) {
+//   localStorage.setItem(ID_TOKEN_KEY, idToken);
+// }
 
-  const date = new Date(0);
-  date.setUTCSeconds(token.exp);
+// export function setTokenType(tokenType) {
+//   localStorage.setItem(TOKEN_TYPE_KEY, tokenType);
+// }
 
-  return date;
-}
+// export function isLoggedIn() {
+//   const idToken = getIdToken();
+//   return !!idToken && !isTokenExpired(idToken);
+// }
 
-function isTokenExpired(token) {
-  const expirationDate = getTokenExpirationDate(token);
-  return expirationDate < new Date();
-}
+// function getTokenExpirationDate(encodedToken) {
+//   const token = decode(encodedToken);
+//   if (!token.exp) { return null; }
+
+//   const date = new Date(0);
+//   date.setUTCSeconds(token.exp);
+
+//   return date;
+// }
+
+// function isTokenExpired(token) {
+//   const expirationDate = getTokenExpirationDate(token);
+//   return expirationDate < new Date();
+// }

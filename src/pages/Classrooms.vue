@@ -21,29 +21,31 @@
       </div>
     </div>
 
-    <div class="btn-group mr-1 float-left">
-          <button
-            type="button"
-            class="btn btn-primary dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="mdi mdi-plus-circle mr-1"></i>
-            Nova
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#"> Turma </a>
-            <a class="dropdown-item btn" data-toggle="modal" data-target="#standard-modal"> Pasta </a>
-          </div>
-    </div>
+    <div class="mb-5">
+      <div class="btn-group mr-1 float-left">
+            <button
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="mdi mdi-plus-circle mr-1"></i>
+              Nova
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#"> Turma </a>
+              <a class="dropdown-item btn" data-toggle="modal" data-target="#standard-modal"> Pasta </a>
+            </div>
+      </div>
 
-    <div id="folders" class="row mb-2 flex-nowrap">
-      <div class="col-auto" v-for="(f, i) in folders" :key="i">
-        <a href="javascript:void(0);" class="btn btn-white mb-2">
-          <i class="mdi mdi-folder mr-2"></i>
-          {{ f.name }}
-        </a>
+      <div id="folders" class="row mb-2 flex-nowrap">
+        <div class="col-auto" v-for="(f, i) in folders" :key="i">
+          <a href="javascript:void(0);" class="btn btn-white mb-2">
+            <i class="mdi mdi-folder mr-2"></i>
+            {{ f.name }}
+          </a>
+        </div>
       </div>
     </div>
 
@@ -93,12 +95,12 @@
           </div>
           <div class="modal-body">
             <div class="col-sm-12">
-              <input type="text" id="simpleinput" class="form-control" placeholder="Nome da pasta">
+              <input v-model="folder.name" type="text" id="simpleinput" class="form-control" placeholder="Nome da pasta">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light" data-dismiss="modal"> Cancelar </button>
-            <button type="button" class="btn btn-primary"> Criar </button>
+            <button type="button" class="btn btn-primary" @click.prevent="handleCreateFolder()" data-dismiss="modal"> Criar </button>
           </div>
         </div>
       </div>
@@ -107,20 +109,14 @@
 </template>
 
 <script>
+import { myFolders, create } from '../services/folders';
 export default {
   data() {
     return {
-      folders: [
-        { name: "1º Semestre" },
-        { name: "2º Semestre" },
-        { name: "3º Semestre" },
-        { name: "4º Semestre" },
-        { name: "5º Semestre" },
-        { name: "6º Semestre" },
-        { name: "7º Semestre" },
-        { name: "8º Semestre" },
-        { name: "9º Semestre" },
-      ],
+      folder: {
+        name: ""
+      },
+      folders: [],
       classrooms: [
         {
           name: "Análise e Projeto de Sistemas",
@@ -142,8 +138,17 @@ export default {
     }
   },
   mounted() {
-    // document.getElementsByTagName("body")[0].setAttribute("data-sidebar-size", "compact");
+    this.getFolders();
   },
+  methods: {
+    async getFolders() {
+      this.folders = await myFolders();
+    },
+    async handleCreateFolder() {
+      await create(this.folder);
+      this.getFolders();
+    }
+  }
 };
 </script>
 

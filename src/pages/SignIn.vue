@@ -23,13 +23,18 @@
 </template>
 
 <script>
-// import { isLoggedIn, login, logout } from '../services/auth';
+import { isLoggedIn, login } from '../services/oauth';
 export default {
+  created() {
+    if(isLoggedIn()) {
+      this.$router.push({ name: "classrooms" });
+    }
+  },
   methods: {
-    async handleLogin() {
-      console.log(this.$gAuth.signIn());
-      // login();
-      // this.$router.push({ name: "classrooms" });
+    handleLogin() {
+      login().then(() => {
+        this.$router.push({ name: "classrooms" });
+      });
     }
   }
 };
