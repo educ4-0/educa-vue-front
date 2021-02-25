@@ -1,5 +1,4 @@
 <template>
-  <!-- Topbar Start -->
   <div class="navbar-custom">
     <div class="container-fluid">
       <ul class="list-unstyled topnav-menu float-right mb-0">
@@ -20,38 +19,32 @@
                 </div>
               </div>
               <div class="dropdown-menu dropdown-lg" id="search-dropdown">
-                <!-- item-->
                 <div class="dropdown-header noti-title">
                   <h5 class="text-overflow mb-2">
                     Found <span class="text-danger">09</span> results
                   </h5>
                 </div>
 
-                <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                   <i class="fe-home mr-1"></i>
                   <span>Analytics Report</span>
                 </a>
 
-                <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                   <i class="fe-aperture mr-1"></i>
                   <span>How can I help you?</span>
                 </a>
 
-                <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                   <i class="fe-settings mr-1"></i>
                   <span>User profile settings</span>
                 </a>
 
-                <!-- item-->
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
                 </div>
 
                 <div class="notification-list">
-                  <!-- item-->
                   <a
                     href="javascript:void(0);"
                     class="dropdown-item notify-item"
@@ -70,7 +63,6 @@
                     </div>
                   </a>
 
-                  <!-- item-->
                   <a
                     href="javascript:void(0);"
                     class="dropdown-item notify-item"
@@ -213,7 +205,6 @@
             />
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <img
                 src="@/assets/images/flags/germany.jpg"
@@ -224,7 +215,6 @@
               <span class="align-middle">German</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <img
                 src="@/assets/images/flags/italy.jpg"
@@ -235,7 +225,6 @@
               <span class="align-middle">Italian</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <img
                 src="@/assets/images/flags/spain.jpg"
@@ -246,7 +235,6 @@
               <span class="align-middle">Spanish</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <img
                 src="@/assets/images/flags/russia.jpg"
@@ -274,7 +262,6 @@
             >
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-            <!-- item-->
             <div class="dropdown-item noti-title">
               <h5 class="m-0">
                 <span class="float-right">
@@ -286,7 +273,6 @@
             </div>
 
             <div class="noti-scroll" data-simplebar>
-              <!-- item-->
               <a
                 href="javascript:void(0);"
                 class="dropdown-item notify-item active"
@@ -300,7 +286,6 @@
                 </p>
               </a>
 
-              <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon">
                   <img
@@ -315,7 +300,6 @@
                 </p>
               </a>
 
-              <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon">
                   <img
@@ -330,7 +314,6 @@
                 </p>
               </a>
 
-              <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon bg-soft-warning text-warning">
                   <i class="mdi mdi-account-plus"></i>
@@ -341,7 +324,6 @@
                 </p>
               </a>
 
-              <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon bg-info">
                   <i class="mdi mdi-comment-account-outline"></i>
@@ -352,7 +334,6 @@
                 </p>
               </a>
 
-              <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon bg-secondary">
                   <i class="mdi mdi-heart"></i>
@@ -365,7 +346,6 @@
               </a>
             </div>
 
-            <!-- All-->
             <a
               href="javascript:void(0);"
               class="dropdown-item text-center text-primary notify-item notify-all"
@@ -391,19 +371,16 @@
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-account-circle-line"></i>
               <span>My Account</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-settings-3-line"></i>
               <span>Settings</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-wallet-line"></i>
               <span
@@ -412,7 +389,6 @@
               </span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-lock-line"></i>
               <span>Lock Screen</span>
@@ -420,8 +396,10 @@
 
             <div class="dropdown-divider"></div>
 
-            <!-- item-->
-            <a @click.prevent="handleLogout()" class="dropdown-item notify-item btn">
+            <a
+              @click.prevent="handleLogout()"
+              class="dropdown-item notify-item btn"
+            >
               <i class="ri-logout-box-line"></i>
               <span>Logout</span>
             </a>
@@ -438,7 +416,6 @@
         </li>
       </ul>
 
-      <!-- LOGO -->
       <div class="logo-box">
         <a href="index.html" class="logo logo-dark text-center">
           <span class="logo-sm">
@@ -469,7 +446,6 @@
         </li>
 
         <li>
-          <!-- Mobile menu toggle (Horizontal Layout)-->
           <a
             class="navbar-toggle nav-link"
             data-toggle="collapse"
@@ -481,7 +457,6 @@
               <span></span>
             </div>
           </a>
-          <!-- End mobile menu toggle-->
         </li>
 
         <li class="dropdown d-none d-xl-block">
@@ -497,25 +472,21 @@
             <i class="mdi mdi-chevron-down"></i>
           </a>
           <div class="dropdown-menu">
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <i class="fe-briefcase mr-1"></i>
               <span>New Projects</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <i class="fe-user mr-1"></i>
               <span>Create Users</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <i class="fe-bar-chart-line- mr-1"></i>
               <span>Revenue Report</span>
             </a>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <i class="fe-settings mr-1"></i>
               <span>Settings</span>
@@ -523,7 +494,6 @@
 
             <div class="dropdown-divider"></div>
 
-            <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item">
               <i class="fe-headphones mr-1"></i>
               <span>Help & Support</span>
@@ -647,11 +617,10 @@
       <div class="clearfix"></div>
     </div>
   </div>
-  <!-- end Topbar -->
 </template>
 
 <script>
-import { isLoggedIn, getUser, logout } from '../../services/oauth';
+import { isLoggedIn, getUser, logout } from "../../services/oauth";
 export default {
   data() {
     return {
@@ -659,7 +628,8 @@ export default {
     };
   },
   created() {
-    if(!isLoggedIn()) {
+    if (!isLoggedIn()) {
+      logout();
       this.$router.push({ name: "signin" });
       return;
     }

@@ -17,6 +17,7 @@ http.interceptors.request.use(async config => {
 });
 
 export async function login() {
+    logout();
     const googleUser = await googleAuth.signIn();
   
     if(!googleAuth.isAuthorized) {

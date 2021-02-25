@@ -3,40 +3,45 @@
     <div class="row">
       <div class="col-12">
         <div class="page-title-box">
-          <h4 class="page-title"> Classrooms </h4>
+          <h4 class="page-title">Classrooms</h4>
           <div class="page-title-right">
             <ol class="breadcrumb m-0">
-              <li class="breadcrumb-item active">
-                <a href="javascript: void(0);"> Home </a>
-              </li>
               <!-- 
               <li class="breadcrumb-item">
                 <a href="javascript: void(0);">Pages</a>
               </li>
-              <li class="breadcrumb-item active">Starter</li>
               -->
+              <li class="breadcrumb-item active">
+                <a href="javascript: void(0);"> Home </a>
+              </li>
             </ol>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mb-5">
+    <div class="mb-2">
       <div class="btn-group mr-1 float-left">
-            <button
-              type="button"
-              class="btn btn-primary dropdown-toggle"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="mdi mdi-plus-circle mr-1"></i>
-              Nova
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"> Turma </a>
-              <a class="dropdown-item btn" data-toggle="modal" data-target="#standard-modal"> Pasta </a>
-            </div>
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="mdi mdi-plus-circle mr-1"></i>
+          Nova
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#"> Turma </a>
+          <a
+            class="dropdown-item btn"
+            data-toggle="modal"
+            data-target="#standard-modal"
+          >
+            Pasta
+          </a>
+        </div>
       </div>
 
       <div id="folders" class="row mb-2 flex-nowrap">
@@ -77,7 +82,7 @@
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title text-truncate"> {{ c.name }} </h5>
+            <h5 class="card-title text-truncate">{{ c.name }}</h5>
             <p class="card-text">
               {{ c.description }}
             </p>
@@ -86,21 +91,50 @@
       </div>
     </div>
 
-    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div
+      id="standard-modal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="standard-modalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="standard-modalLabel">Nova Pasta</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              ×
+            </button>
           </div>
           <div class="modal-body">
             <div class="col-sm-12">
-              <input v-model="folder.name" type="text" id="simpleinput" class="form-control" placeholder="Nome da pasta">
+              <input
+                v-model="folder.name"
+                type="text"
+                id="simpleinput"
+                class="form-control"
+                placeholder="Nome da pasta"
+              />
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal"> Cancelar </button>
-            <button type="button" class="btn btn-primary" @click.prevent="handleCreateFolder()" data-dismiss="modal"> Criar </button>
+            <button type="button" class="btn btn-light" data-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              @click.prevent="handleCreateFolder()"
+              data-dismiss="modal"
+            >
+              Criar
+            </button>
           </div>
         </div>
       </div>
@@ -109,33 +143,37 @@
 </template>
 
 <script>
-import { myFolders, create } from '../services/folders';
+import { myFolders, create } from "../services/folders";
 export default {
   data() {
     return {
       folder: {
-        name: ""
+        name: "",
       },
       folders: [],
       classrooms: [
         {
           name: "Análise e Projeto de Sistemas",
-          description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          description:
+            "Some quick example text to build on the card title and make up the bulk of the card's content.",
         },
         {
           name: "Construção e Análise de Algoritmos",
-          description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          description:
+            "Some quick example text to build on the card title and make up the bulk of the card's content.",
         },
         {
           name: "Inteligência Artificial",
-          description: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          description:
+            "Some quick example text to build on the card title and make up the bulk of the card's content.",
         },
         {
           name: "Sistemas Distribuídos",
-          description: "Some quick example text to build on the card title and make up the bulk of the card's content."
-        }
-      ]
-    }
+          description:
+            "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        },
+      ],
+    };
   },
   mounted() {
     this.getFolders();
@@ -146,9 +184,10 @@ export default {
     },
     async handleCreateFolder() {
       await create(this.folder);
+      this.folder.name = "";
       this.getFolders();
-    }
-  }
+    },
+  },
 };
 </script>
 
