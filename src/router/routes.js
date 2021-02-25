@@ -3,15 +3,6 @@ import Layout from "@/layout/Layout.vue";
 import PlannerLayout from "@/layout/PlannerLayout.vue";
 import BigPictureLayout from "@/layout/BigPictureLayout.vue";
 
-<<<<<<< Updated upstream
-=======
-// Pages
-const Classrooms = () => import("@/pages/Classrooms")
-const VideoContent = () => import("@/pages/VideoContent")
-const Dashboard = () => import("@/pages/Dashboard.vue");
-const SignIn = () => import("@/pages/SignIn.vue");
-
->>>>>>> Stashed changes
 const routes = [
   {
     path: "/",
@@ -29,7 +20,6 @@ const routes = [
     ]
   },
   {
-<<<<<<< Updated upstream
     path: "/planner",
     component: PlannerLayout,
     children: [
@@ -37,19 +27,6 @@ const routes = [
         path: "/",
         name: "videocontent",
         component: () => import("@/pages/VideoContent")
-=======
-    path: "/",
-    redirect: "/VideoContent",
-  },
-  {
-    path: "/VideoContent",
-    component: Layout,
-    children: [
-      {
-        path: "/",
-        name: "VideoContent",
-        component: VideoContent
->>>>>>> Stashed changes
       }
     ]
   },
