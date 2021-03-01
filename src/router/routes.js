@@ -20,17 +20,6 @@ const routes = [
     ]
   },
   {
-    path: "/planner",
-    component: PlannerLayout,
-    children: [
-      {
-        path: "/",
-        name: "videocontent",
-        component: () => import("@/pages/VideoContent")
-      }
-    ]
-  },
-  {
     path: "/dashboard",
     component: Layout,
     children: [
@@ -60,6 +49,17 @@ const routes = [
         path: "/",
         name: "classroom",
         component: () => import("@/pages/Classroom.vue")
+      }
+    ]
+  },
+  {
+    path: "/classrooms/id/week/id",
+    component: PlannerLayout,
+    children: [
+      {
+        path: "/",
+        name: "weekcontent",
+        component: () => import("@/pages/weekContent/WeekContent.vue")
       }
     ]
   },

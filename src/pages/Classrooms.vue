@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="mb-2">
+    <div id="new_and_folders" class="mb-2">
       <div class="btn-group mr-1 float-left">
         <button
           type="button"
@@ -192,7 +192,12 @@ export default {
 </script>
 
 <style lang="scss">
-#folders {
-  overflow: auto;
+#new_and_folders {
+  height: 50px;
+
+  #folders {
+    overflow: auto;
+  }
+
 }
 </style>
