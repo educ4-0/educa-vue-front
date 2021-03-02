@@ -45,16 +45,6 @@ export async function login() {
     clearTokenType();
   }
   
-  export function getUser() {
-    return http.get(`users/me`, {
-      withCredentials: true,
-      headers: {
-        Authorization: `${getTokenType()} ${getIdToken()}`,
-      },
-    })
-      .then((res) => res.data);
-  }
-  
   export function getIdToken() {
     return localStorage.getItem(ID_TOKEN_KEY);
   }
