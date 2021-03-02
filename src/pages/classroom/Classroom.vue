@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="row">
+  <div class="mt-3">
+    <!-- <div class="row">
       <div class="col-12">
         <div class="page-title-box">
           <h4 class="page-title">Classrooms</h4>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div
@@ -28,9 +28,9 @@
       >
         <img
           class="img-fluid"
-          src="../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
+          src="../../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
           alt=""
-          srcset="../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
+          srcset="../../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
         />
       </div>
       <div class="col-8">
@@ -50,7 +50,7 @@
             <div class="media mb-3">
               <div class="d-flex mr-3 align-self-start">
                 <img
-                  src="../assets/images/users/avatar-9.jpg"
+                  src="../../assets/images/users/avatar-9.jpg"
                   class="rounded-circle"
                   alt="Generic placeholder image"
                   height="48"
@@ -79,7 +79,7 @@
             <div class="media mb-3">
               <div class="d-flex mr-3 align-self-start">
                 <img
-                  src="../assets/images/users/avatar-8.jpg"
+                  src="../../assets/images/users/avatar-8.jpg"
                   class="rounded-circle"
                   alt="Generic placeholder image"
                   height="48"
@@ -108,7 +108,7 @@
             <div class="media mb-3">
               <div class="d-flex mr-3 align-self-start">
                 <img
-                  src="../assets/images/users/avatar-7.jpg"
+                  src="../../assets/images/users/avatar-7.jpg"
                   class="rounded-circle"
                   alt="Generic placeholder image"
                   height="48"
@@ -137,7 +137,7 @@
             <div class="media mb-3">
               <div class="d-flex mr-3 align-self-start">
                 <img
-                  src="../assets/images/users/avatar-6.jpg"
+                  src="../../assets/images/users/avatar-6.jpg"
                   class="rounded-circle"
                   alt="Generic placeholder image"
                   height="48"
@@ -166,6 +166,9 @@
           <div class="card">
             <h5 class="card-header bg-white">Conteúdo</h5>
             <div class="card-body" style="padding: 0px; padding-right: 0px">
+              <button class="btn btn-block btn-primary waves-effect waves-light">
+                NOVA SEMANA
+              </button>
               <button v-for="i in 5" :key="i" class="btn btn-block btn-light waves-effect waves-light">
                 Semana {{ i }}
               </button>

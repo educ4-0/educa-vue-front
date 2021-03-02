@@ -1,16 +1,11 @@
 <template>
-  <div>
-    <div class="row">
+  <div class="mt-3">
+    <!-- <div class="row">
       <div class="col-12">
         <div class="page-title-box">
           <h4 class="page-title">Classrooms</h4>
           <div class="page-title-right">
             <ol class="breadcrumb m-0">
-              <!-- 
-              <li class="breadcrumb-item">
-                <a href="javascript: void(0);">Pages</a>
-              </li>
-              -->
               <li class="breadcrumb-item active">
                 <a href="javascript: void(0);"> Home </a>
               </li>
@@ -18,9 +13,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div id="new_and_folders" class="mb-2">
+    <div id="new_and_folders" class="mb-3">
       <div class="btn-group mr-1 float-left">
         <button
           type="button"
@@ -46,7 +41,7 @@
 
       <div id="folders" class="row mb-2 flex-nowrap">
         <div class="col-auto" v-for="(f, i) in folders" :key="i">
-          <a href="javascript:void(0);" class="btn btn-white mb-2">
+          <a href="javascript:void(0);" class="btn btn-light mb-2">
             <i class="mdi mdi-folder mr-2"></i>
             {{ f.name }}
           </a>
@@ -78,7 +73,7 @@
           <img
             style="margin-top: -31px"
             class="card-img-top img-fluid"
-            src="../assets/images/small/img-2.jpg"
+            src="../../assets/images/small/img-2.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -143,7 +138,7 @@
 </template>
 
 <script>
-import { myFolders, create } from "../services/folders";
+import { myFolders, create } from "@/services/folders";
 export default {
   data() {
     return {
