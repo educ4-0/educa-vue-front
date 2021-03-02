@@ -365,7 +365,7 @@
             aria-haspopup="false"
             aria-expanded="false"
           >
-            <img :src="user.picture" :alt="user.name" class="rounded-circle" />
+            <img :src="user.picture" alt="user_img" class="rounded-circle" />
             <span class="pro-user-name ml-1">
               {{ user.name }} <i class="mdi mdi-chevron-down"></i>
             </span>
@@ -620,7 +620,8 @@
 </template>
 
 <script>
-import { isLoggedIn, getUser, logout } from "../../services/oauth";
+import { isLoggedIn, logout } from "@/services/oauth";
+import { getMe } from "@/services/users";
 export default {
   data() {
     return {
@@ -633,7 +634,7 @@ export default {
       this.$router.push({ name: "signin" });
       return;
     }
-    getUser().then((res) => {
+    getMe().then((res) => {
       this.user = res;
     });
   },
