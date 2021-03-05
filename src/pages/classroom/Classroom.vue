@@ -166,9 +166,6 @@
           <div class="card">
             <h5 class="card-header bg-white">Conteúdo</h5>
             <div class="card-body" style="padding: 0px; padding-right: 0px">
-              <button class="btn btn-block btn-primary waves-effect waves-light">
-                NOVA SEMANA
-              </button>
               <button v-for="i in 5" :key="i" class="btn btn-block btn-light waves-effect waves-light">
                 Semana {{ i }}
               </button>

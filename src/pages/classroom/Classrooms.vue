@@ -139,6 +139,7 @@
 
 <script>
 import { myFolders, create } from "@/services/folders";
+import { myClassrooms } from "@/services/classrooms";
 export default {
   data() {
     return {
@@ -146,34 +147,17 @@ export default {
         name: "",
       },
       folders: [],
-      classrooms: [
-        {
-          name: "Análise e Projeto de Sistemas",
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          name: "Construção e Análise de Algoritmos",
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          name: "Inteligência Artificial",
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          name: "Sistemas Distribuídos",
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-      ],
+      classrooms: [],
     };
   },
   mounted() {
     this.getFolders();
+    this.getClassrooms();
   },
   methods: {
+    async getClassrooms() {
+      this.classrooms = await myClassrooms();
+    },
     async getFolders() {
       this.folders = await myFolders();
     },

@@ -77,7 +77,7 @@
               class="waves-effect"
             >
               <i class="ri-home-2-line"></i>
-              <span> Classrooms </span>
+              <span> Turmas </span>
             </a>
           </li>
           <li>

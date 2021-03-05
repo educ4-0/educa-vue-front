@@ -189,7 +189,7 @@
           </div>
         </li>
 
-        <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
+        <!-- <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
           <a
             class="nav-link dropdown-toggle arrow-none waves-effect waves-light"
             data-toggle="dropdown"
@@ -245,7 +245,7 @@
               <span class="align-middle">Russian</span>
             </a>
           </div>
-        </li>
+        </li> -->
 
         <li class="dropdown notification-list topbar-dropdown">
           <a
