@@ -41,48 +41,52 @@
 
       <div id="folders" class="row mb-2 flex-nowrap">
         <div class="col-auto" v-for="(f, i) in folders" :key="i">
-          <a href="javascript:void(0);" class="btn btn-light mb-2">
-            <i class="mdi mdi-folder mr-2"></i>
-            {{ f.name }}
-          </a>
+          <router-link :to="{ name: 'folder', params: { id: f.id} }">
+            <a class="btn btn-light mb-2">
+              <i class="mdi mdi-folder mr-2"></i>
+              {{ f.name }}
+            </a>
+          </router-link>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xl-3 col-sm-4" v-for="(c, i) in classrooms" :key="i">
-        <div class="card">
-          <div>
-            <div class="dropdown float-right">
-              <a
-                class="text-body dropdown-toggle"
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
-              </a>
+          <div class="card">
+            <div>
+              <div class="dropdown float-right">
+                <a
+                  class="text-body dropdown-toggle"
+                  href="#"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="mdi mdi-dots-vertical font-20 mr-1 text-white"></i>
+                </a>
 
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#"> Mover </a>
-                <a class="dropdown-item" href="#"> Arquivar </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#"> Mover </a>
+                  <a class="dropdown-item" href="#"> Arquivar </a>
+                </div>
               </div>
             </div>
+            <router-link :to="{ name: 'classroom', params: { id: c.id} }">
+              <img
+                style="margin-top: -31px"
+                class="card-img-top img-fluid"
+                src="../../assets/images/small/img-2.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-truncate">{{ c.name }}</h5>
+                <p class="card-text">
+                  {{ c.description }}
+                </p>
+              </div>
+        </router-link>
           </div>
-          <img
-            style="margin-top: -31px"
-            class="card-img-top img-fluid"
-            src="../../assets/images/small/img-2.jpg"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title text-truncate">{{ c.name }}</h5>
-            <p class="card-text">
-              {{ c.description }}
-            </p>
-          </div>
-        </div>
       </div>
     </div>
 

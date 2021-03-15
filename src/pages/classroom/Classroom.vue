@@ -34,15 +34,8 @@
         />
       </div>
       <div class="col-8">
-        <h4 class="mt-3 mb-2">Linguagem de Programação II</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
-          turpis dignissim, vestibulum orci sed, pretium erat. Integer posuere
-          magna et mi scelerisque sodales. Suspendisse vitae egestas felis, et
-          ullamcorper dui. Etiam elit tortor, porta vel feugiat eget, pretium
-          eget magna. Nulla facilisi. Integer non lacinia massa, nec dictum
-          purus. Ut euismod mauris urna, id placerat elit pulvinar eget.
-        </p>
+        <h4 class="mt-3 mb-2"> {{ classroom.name }} </h4>
+        <p> {{ classroom.description }} </p>
 
         <h5 class="mt-3 mb-2">Mural</h5>
         <div class="card">
@@ -161,13 +154,14 @@
           </div>
         </div>
       </div>
+
       <div class="col-4 mt-3">
         <div class="col-12">
           <div class="card">
             <h5 class="card-header bg-white">Conteúdo</h5>
-            <div class="card-body" style="padding: 0px; padding-right: 0px">
-              <button v-for="i in 5" :key="i" class="btn btn-block btn-light waves-effect waves-light">
-                Semana {{ i }}
+            <div class="card-body" style="padding: 0px; padding-right: 0px; padding-bottom: 10px">
+              <button v-for="(week, i) in weeks" :key="i" class="btn btn-block btn-light waves-effect waves-light">
+                Semana {{ i+1 }}
               </button>
             </div>
           </div>
@@ -179,7 +173,27 @@
 </template>
 
 <script>
-export default {};
+import { findClassroomById, listAllWeeks } from '@/services/classrooms';
+export default {
+  data() {
+    return {
+      classroom: {},
+      weeks: [],
+    }
+  },
+  async mounted() {
+    await this.getClassroom(this.$router.history.current.params.id);
+    this.getWeeks();
+  },
+  methods: {
+    async getClassroom(id) {
+      this.classroom = await findClassroomById(id);
+    },
+    async getWeeks() {
+      this.weeks = await listAllWeeks(this.classroom.id);
+    }
+  }
+};
 </script>
 
 <style>

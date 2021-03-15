@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12">
         <div class="page-title-box">
           <h4 class="page-title">Semana 1</h4>
@@ -18,17 +18,20 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="d-flex justify-content-between pb-2">
-      <div>
-        <h4 class="mr-auto"> {{ content.name }} </h4>
+    <div class="row justify-content-between">
+      <div class="col-auto">
+        <h4> {{ content.name }} </h4>
       </div>
-      <div class="d-flex">
+      <div class="col-auto row">
+        <div class="col-auto">
         <button class="btn">
           <i class="fe-check-square mr-1"></i>
           Marcar como concluído
         </button>
+        </div>
+        <div class="col-auto">
         <div class="dropdown" style="">
           <button
             class="dropdown-toggle btn"
@@ -50,6 +53,7 @@
               Excluir
             </a>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
     
     <div class="row mb-3">
       <div class="col-auto">
-        <h4 v-if="!renameFolder"> Folder Name </h4>
+        <h4 v-if="!renameFolder"> {{ folder.name }} </h4>
         <div class="input-group" v-if="renameFolder">
           <input
             type="text"
@@ -36,7 +36,7 @@
             <i class="mdi mdi-square-edit-outline mr-1"></i>
             Editar
           </a>
-          <a class="dropdown-item" >
+          <a class="dropdown-item" @click.prevent="handleDeleteFolder()">
             <i class="mdi mdi-delete mr-1"></i>
             Excluir
           </a>
@@ -134,15 +134,12 @@
 </template>
 
 <script>
-import { myFolders, create } from "@/services/folders";
+import { findById, deleteById } from "@/services/folders";
 export default {
   data() {
     return {
       renameFolder: false,
-      folder: {
-        name: "",
-      },
-      folders: [],
+      folder: {},
       classrooms: [
         {
           name: "Análise e Projeto de Sistemas",
@@ -158,17 +155,16 @@ export default {
     };
   },
   mounted() {
-    this.getFolders();
+    this.getFolder(this.$router.history.current.params.id);
   },
   methods: {
-    async getFolders() {
-      this.folders = await myFolders();
+    async getFolder(id) {
+      this.folder = await findById(id);
     },
-    async handleCreateFolder() {
-      await create(this.folder);
-      this.folder.name = "";
-      this.getFolders();
-    },
+    async handleDeleteFolder() {
+      await deleteById(this.folder.id);
+      this.$router.push({ name: "classrooms" });
+    }
   },
 };
 </script>

@@ -31,7 +31,7 @@ const routes = [
     ]
   },
   {
-    path: "/classrooms/id",
+    path: "/classrooms/:id",
     component: Layout,
     children: [
       {
@@ -42,7 +42,7 @@ const routes = [
     ]
   },
   {
-    path: "/folder",
+    path: "/folder/:id",
     component: Layout,
     children: [
       {
