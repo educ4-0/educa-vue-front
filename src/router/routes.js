@@ -64,6 +64,10 @@ const routes = [
     ]
   },
   {
+    path: "/classrooms/id/week/id/editor",
+    component: () => import("@/pages/weekContent/partials/QuillFullEditor.vue")
+  },
+  {
     path: "/dashboard",
     component: Layout,
     children: [

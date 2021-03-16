@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import { myFolders, create } from "@/services/folders";
+import { myFolders, createFolder } from "@/services/folders";
 import { myClassrooms } from "@/services/classrooms";
 export default {
   data() {
@@ -166,7 +166,7 @@ export default {
       this.folders = await myFolders();
     },
     async handleCreateFolder() {
-      await create(this.folder);
+      await createFolder(this.folder);
       this.folder.name = "";
       this.getFolders();
     },

@@ -1,25 +1,24 @@
-import http from "./http";
+import http from './http';
 
-// TODO - Pegar Id de School
-const BASE_URL = 'schools/603101743e3cec2ca0a5db1a/classrooms';
+const BASE_URL = 'institution';
 
-export async function myClassrooms() {
+export async function listInstitutions() {
   try {
-    return (await http.get(`${BASE_URL}`, {})).data;
+    return (await http.get(`${BASE_URL}/`, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-export async function createClassroom(body = {}) {
+export async function createInstitution(body = '') {
   try {
-    return (await hhtp.post(`${BASE_URL}`, body, {})).data;
-  } catch (error){
+    return (await http.post(`${BASE_URL}/`, body, {})).data;
+  } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-export async function findClassroomById(id = '') {
+export async function findInstitutionById(id = '') {
   try {
     return (await http.get(`${BASE_URL}/${id}`, {})).data;
   } catch (error) {
@@ -27,7 +26,7 @@ export async function findClassroomById(id = '') {
   }
 }
 
-export async function updateClassroom(id = '', body = {}) {
+export async function updateInstitution(id = '', body = {}) {
   try {
     return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;
   } catch (error) {

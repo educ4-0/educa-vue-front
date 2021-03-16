@@ -1,47 +1,50 @@
 import http from "./http";
 
-const baseURL = 'folders';
+const BASE_URL = 'folders';
 
 export async function myFolders() {
   try {
-    const resp = await http.get(`${baseURL}`, {});
-    return resp.data;
+    return (await http.get(`${BASE_URL}`, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-export async function create(body = {}) {
+export async function createFolder(body = {}) {
   try {
-    const resp = await http.post(`${baseURL}`, body, {});
-    return resp.data;
+    return (await http.post(`${BASE_URL}`, body, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-// export async function update(body = {}, id = '') {
-//   try {
-//     const resp = await http.patch(`${baseURL}/${id}`, body, {});
-//     return resp.data;
-//   } catch (error) {
-//     throw error.response ? error.response.data : error;
-//   }
-// }
-
-export async function findById(id = '') {
+export async function findFolderById(id = '') {
   try {
-    const resp = await http.get(`${baseURL}/${id}`, {}, {});
-    return resp.data;
+    return (await http.get(`${BASE_URL}/${id}`, {}, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-export async function deleteById(id = '') {
+export async function deleteFolder(id = '') {
   try {
-    const resp = await http.delete(`${baseURL}/${id}`, {});
-    return resp.data;
+    return (await http.delete(`${BASE_URL}/${id}`, {})).data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+}
+
+export async function updateFolder(id = '', body = {}) {
+  try {
+    return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;
+  } catch (error) {
+    throw error.response ? error.response.data : error;
+  }
+}
+
+export async function addClassroomToFolder(folderId = '', classroomId = '') {
+  try {
+    return (await hhtp.patch(`${BASE_URL}/${folderId}/classrooms/${classroomId}/add-to-folder`, {}, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }

@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import { findById, deleteById } from "@/services/folders";
+import { findFolderById, deleteFolder } from "@/services/folders";
 export default {
   data() {
     return {
@@ -159,10 +159,10 @@ export default {
   },
   methods: {
     async getFolder(id) {
-      this.folder = await findById(id);
+      this.folder = await findFolderById(id);
     },
     async handleDeleteFolder() {
-      await deleteById(this.folder.id);
+      await deleteFolder(this.folder.id);
       this.$router.push({ name: "classrooms" });
     }
   },

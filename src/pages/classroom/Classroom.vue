@@ -173,7 +173,8 @@
 </template>
 
 <script>
-import { findClassroomById, listAllWeeks } from '@/services/classrooms';
+import { findClassroomById } from '@/services/classrooms';
+import { listWeeks } from '@/services/weeks';
 export default {
   data() {
     return {
@@ -190,7 +191,7 @@ export default {
       this.classroom = await findClassroomById(id);
     },
     async getWeeks() {
-      this.weeks = await listAllWeeks(this.classroom.id);
+      this.weeks = await listWeeks(this.classroom.id);
     }
   }
 };
