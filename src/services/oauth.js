@@ -19,13 +19,17 @@ http.interceptors.request.use(async config => {
 export async function login() {
     logout();
     const googleUser = await googleAuth.signIn();
-  
+
+    // const googleUser = await googleAuth.getAuthCode();
+
     if(!googleAuth.isAuthorized) {
       return Promise.reject('Falha na autenticação');
     }
+
+    console.log(googleUser);
   
-    const idToken = googleUser.uc.id_token;
-    const accessToken = googleUser.uc.access_token;
+    const idToken = googleUser.tc.id_token;
+    const accessToken = googleUser.tc.access_token;
   
     return http.post(`${BASE_URL}`, {}, {
       withCredentials: true,
