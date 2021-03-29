@@ -26,10 +26,21 @@ export async function login() {
       return Promise.reject('Falha na autenticação');
     }
 
-    console.log(googleUser);
+    let objkeys = Object.entries(googleUser);
+
+    let gidToken;
+    let gaccessToken;
+
+    objkeys.forEach((subobj) => {
+      if(subobj[1].id_token != undefined &&  subobj[1].id_token != null
+          && subobj[1].access_token != undefined && subobj[1].access_token != null){
+        gidToken = subobj[1].id_token;
+        gaccessToken = subobj[1].access_token;
+      }
+    })
   
-    const idToken = googleUser.tc.id_token;
-    const accessToken = googleUser.tc.access_token;
+    const idToken = gidToken;
+    const accessToken = gaccessToken;
   
     return http.post(`${BASE_URL}`, {}, {
       withCredentials: true,
