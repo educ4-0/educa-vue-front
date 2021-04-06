@@ -10,6 +10,7 @@ export async function getMe() {
   }
 }
 
+// TODO
 export async function updateUser(id = '', body) {
   try {
     return (await http.get(`${BASE_URL}/${id}`, body, {})).data;
@@ -18,6 +19,7 @@ export async function updateUser(id = '', body) {
   }
 }
 
+// TODO
 export async function enableUser(id = '') {
   try {
     return (await http.get(`${BASE_URL}/${id}/enable`, {})).data;
@@ -26,6 +28,7 @@ export async function enableUser(id = '') {
   }
 }
 
+// TODO
 export async function disableUser(id = '') {
   try {
     return (await http.get(`${BASE_URL}/${id}/disable`, {})).data;

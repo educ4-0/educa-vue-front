@@ -34,17 +34,18 @@ export async function deleteFolder(id = '') {
   }
 }
 
-export async function updateFolder(id = '', body = {}) {
+export async function updateFolder(folderId = '', body = {}) {
   try {
-    return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;
+    return (await http.patch(`${BASE_URL}/${folderId}`, body, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
+// TODO
 export async function addClassroomToFolder(folderId = '', classroomId = '') {
   try {
-    return (await hhtp.patch(`${BASE_URL}/${folderId}/classrooms/${classroomId}/add-to-folder`, {}, {})).data;
+    return (await http.patch(`${BASE_URL}/${folderId}/classrooms/${classroomId}/add-to-folder`, {}, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }

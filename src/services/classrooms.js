@@ -11,6 +11,7 @@ export async function myClassrooms() {
   }
 }
 
+// TODO
 export async function createClassroom(body = {}) {
   try {
     return (await hhtp.post(`${BASE_URL}`, body, {})).data;
@@ -27,6 +28,7 @@ export async function findClassroomById(id = '') {
   }
 }
 
+// TODO
 export async function updateClassroom(id = '', body = {}) {
   try {
     return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;

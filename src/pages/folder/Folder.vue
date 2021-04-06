@@ -8,12 +8,12 @@
           <input
             type="text"
             class="form-control"
-            value="Folder name"
+            v-model="upFolder.name"
           >
           <button
             class="btn btn-primary waves-effect waves-light"
             type="button"
-            @click.prevent="renameFolder = !renameFolder"
+            @click.prevent="handleUpdateFolder()"
           >
             <i class="mdi mdi-content-save"></i>
             Salvar
@@ -32,7 +32,7 @@
         </button>
 
         <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" @click.prevent="renameFolder = !renameFolder">
+          <a class="dropdown-item" @click.prevent="handleEditName()">
             <i class="mdi mdi-square-edit-outline mr-1"></i>
             Editar
           </a>
@@ -134,11 +134,14 @@
 </template>
 
 <script>
-import { findFolderById, deleteFolder } from "@/services/folders";
+import { findFolderById, deleteFolder, updateFolder } from "@/services/folders";
 export default {
   data() {
     return {
       renameFolder: false,
+      upFolder: {
+        name: ''
+      },
       folder: {},
       classrooms: [
         {
@@ -164,6 +167,15 @@ export default {
     async handleDeleteFolder() {
       await deleteFolder(this.folder.id);
       this.$router.push({ name: "classrooms" });
+    },
+    handleEditName() {
+      this.upFolder.name = this.folder.name;
+      this.renameFolder = !this.renameFolder;
+    },
+    async handleUpdateFolder() {
+      await updateFolder(this.folder.id, this.upFolder);
+      this.getFolder(this.folder.id);
+      this.handleEditName();
     }
   },
 };

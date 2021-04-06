@@ -628,16 +628,16 @@ export default {
       user: {},
     };
   },
-  // created() {
-  //   if (!isLoggedIn()) {
-  //     logout();
-  //     this.$router.push({ name: "signin" });
-  //     return;
-  //   }
-  //   getMe().then((res) => {
-  //     this.user = res;
-  //   });
-  // },
+  created() {
+    if (!isLoggedIn()) {
+      logout();
+      this.$router.push({ name: "signin" });
+      return;
+    }
+    getMe().then((res) => {
+      this.user = res;
+    });
+  },
   methods: {
     handleLogout() {
       logout();
