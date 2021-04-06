@@ -18,7 +18,7 @@
           <img src="@/assets/images/logo-sm.png" alt="" height="24" />
         </span>
         <span class="logo-lg">
-          <img src="@/assets/images/logo-e4-light.png" alt="" height="30" />
+          <img src="@/assets/images/educa-letter.png" alt="" height="24" />
         </span>
       </a>
     </div>
@@ -77,7 +77,7 @@
               class="waves-effect"
             >
               <i class="ri-home-2-line"></i>
-              <span> Classrooms </span>
+              <span> Turmas </span>
             </a>
           </li>
           <li>

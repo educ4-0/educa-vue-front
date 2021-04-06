@@ -3,8 +3,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          2021 &copy; Minton theme by
-          <a href="">Coderthemes</a>
+          2021 &copy; todos os direitos reservados 
+          <a href="">educ4.com</a>
         </div>
         <div class="col-md-6">
           <div class="text-md-right footer-links d-none d-sm-block">

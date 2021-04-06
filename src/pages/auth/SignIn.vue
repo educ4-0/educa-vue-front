@@ -1,6 +1,5 @@
 <template>
 <div>
-  <!-- title-->
   <h4 class="mt-0">Sign In</h4>
   <p class="text-muted mb-4">
     Entre na melhor plataforma educacional online.
@@ -23,7 +22,7 @@
 </template>
 
 <script>
-import { isLoggedIn, login } from '../services/oauth';
+import { isLoggedIn, login } from '@/services/oauth';
 export default {
   created() {
     if(isLoggedIn()) {

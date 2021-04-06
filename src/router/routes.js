@@ -9,26 +9,63 @@ const routes = [
     redirect: "/classrooms",
   },
   {
+    path: "/signin",
+    component: BigPictureLayout,
+    children: [
+      {
+        path: "/",
+        name: "signin",
+        component: () => import("@/pages/auth/SignIn.vue")
+      }
+    ]
+  },
+  {
     path: "/classrooms",
     component: Layout,
     children: [
       {
         path: "/",
         name: "classrooms",
-        component: () => import("@/pages/Classrooms")
+        component: () => import("@/pages/classroom/Classrooms")
       }
     ]
   },
   {
-    path: "/planner",
+    path: "/classrooms/:id",
+    component: Layout,
+    children: [
+      {
+        path: "/",
+        name: "classroom",
+        component: () => import("@/pages/classroom/Classroom.vue")
+      }
+    ]
+  },
+  {
+    path: "/folder/:id",
+    component: Layout,
+    children: [
+      {
+        path: "/",
+        name: "folder",
+        component: () => import("@/pages/folder/Folder.vue")
+      }
+    ]
+  },
+  {
+    path: "/classrooms/id/week/id",
     component: PlannerLayout,
     children: [
       {
         path: "/",
-        name: "videocontent",
-        component: () => import("@/pages/VideoContent")
+        name: "weekcontent",
+        component: () => import("@/pages/weekContent/WeekContent.vue")
       }
     ]
+  },
+  {
+    path: "/classrooms/id/week/id/editor",
+    component: () => import("@/pages/weekContent/partials/QuillFullEditor.vue")
   },
   {
     path: "/dashboard",
@@ -42,24 +79,13 @@ const routes = [
     ]
   },
   {
-    path: "/signin",
-    component: BigPictureLayout,
-    children: [
-      {
-        path: "/",
-        name: "signin",
-        component: () => import("@/pages/SignIn.vue")
-      }
-    ]
-  },
-  {
-    path: "/classrooms/id",
+    path: "/profile",
     component: Layout,
     children: [
       {
         path: "/",
-        name: "classroom",
-        component: () => import("@/pages/Classroom.vue")
+        name: "profile",
+        component: () => import("@/pages/profile/Profile.vue")
       }
     ]
   },

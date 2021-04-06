@@ -17,14 +17,30 @@ http.interceptors.request.use(async config => {
 });
 
 export async function login() {
+    logout();
     const googleUser = await googleAuth.signIn();
-  
+
+    // const googleUser = await googleAuth.getAuthCode();
+
     if(!googleAuth.isAuthorized) {
       return Promise.reject('Falha na autenticação');
     }
+
+    let objkeys = Object.entries(googleUser);
+
+    let gidToken;
+    let gaccessToken;
+
+    objkeys.forEach((subobj) => {
+      if(subobj[1].id_token != undefined &&  subobj[1].id_token != null
+          && subobj[1].access_token != undefined && subobj[1].access_token != null){
+        gidToken = subobj[1].id_token;
+        gaccessToken = subobj[1].access_token;
+      }
+    })
   
-    const idToken = googleUser.uc.id_token;
-    const accessToken = googleUser.uc.access_token;
+    const idToken = gidToken;
+    const accessToken = gaccessToken;
   
     return http.post(`${BASE_URL}`, {}, {
       withCredentials: true,
@@ -42,16 +58,6 @@ export async function login() {
     clearIdToken();
     clearAccessToken();
     clearTokenType();
-  }
-  
-  export function getUser() {
-    return http.get(`users/me`, {
-      withCredentials: true,
-      headers: {
-        Authorization: `${getTokenType()} ${getIdToken()}`,
-      },
-    })
-      .then((res) => res.data);
   }
   
   export function getIdToken() {
