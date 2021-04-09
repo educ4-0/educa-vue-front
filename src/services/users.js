@@ -11,27 +11,27 @@ export async function getMe() {
 }
 
 // TODO
-export async function updateUser(id = '', body) {
+export async function updateUser(id = '', body = {}) {
   try {
-    return (await http.get(`${BASE_URL}/${id}`, body, {})).data;
+    return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
 // TODO
-export async function enableUser(id = '') {
+export async function enableUser(id = '', body = {}) {
   try {
-    return (await http.get(`${BASE_URL}/${id}/enable`, {})).data;
+    return (await http.patch(`${BASE_URL}/${id}/enable`, body, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
 // TODO
-export async function disableUser(id = '') {
+export async function disableUser(id = '', body = {}) {
   try {
-    return (await http.get(`${BASE_URL}/${id}/disable`, {})).data;
+    return (await http.patch(`${BASE_URL}/${id}/disable`, body, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }

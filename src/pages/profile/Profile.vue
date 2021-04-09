@@ -16,18 +16,21 @@
       </div>
     </div> -->
 
+    {{user}}
+    {{updateUser}}
+
     <div class="row mt-2">
       <div class="col-lg-4 col-xl-4">
         <div class="card text-center">
           <div class="card-body">
             <img
-              src="../../assets/images/users/avatar-7.jpg"
+              :src="user.picture"
               class="rounded-circle avatar-xl img-thumbnail"
               alt="profile-image"
             />
 
-            <h4 class="mt-3 mb-0">Ricardo S. Nogueira</h4>
-            <p class="text-muted">@ricnogueira</p>
+            <h4 class="mt-3 mb-0">{{user.name}}</h4>
+            <p class="text-muted">{{user.username}}</p>
 
             <button
               type="button"
@@ -42,7 +45,7 @@
               Mensagem
             </button>
 
-            <div class="text-left mt-3">
+            <!-- <div class="text-left mt-3">
               <h4 class="font-13 text-uppercase">Sobre mim:</h4>
               <p class="text-muted font-13 mb-3">
                 Olá sou o Ricardo Nogueira...
@@ -70,7 +73,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> -->
 
             <ul class="social-list list-inline mb-0">
               <li class="list-inline-item">
@@ -346,8 +349,9 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="firstname">Primeiro nome</label>
+                        <label for="firstname">Nome completo</label>
                         <input
+                          v-model="updateUser.name"
                           type="text"
                           class="form-control"
                           id="firstname"
@@ -355,7 +359,20 @@
                         />
                       </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <!-- <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                          v-model="updateUser.username"
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          placeholder="Insira seu usuário"
+                        />
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="lastname">Último nome</label>
                         <input
@@ -548,8 +565,8 @@
                           />
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
+                    </div> -->
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="social-gh">Github</label>
                         <div class="input-group">
@@ -566,13 +583,14 @@
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
 
                   <div class="text-right">
                     <button
                       type="submit"
                       class="btn btn-success waves-effect waves-light mt-2"
+                      @click.prevent="handleUpdateUser()"
                     >
                       <i class="mdi mdi-content-save"></i> Salvar
                     </button>
@@ -588,7 +606,36 @@
 </template>
 
 <script>
-export default {};
+import {updateUser, getMe} from "@/services/users";
+export default {
+  data() {
+    return {
+      user: {},
+      renameUser: false,
+      updateUser: {
+        name: '',
+        picture: ''
+      }
+    };
+  },
+  mounted () {
+    getMe().then(res => {
+      this.user = res;
+      this.updateUser.name = this.user.name;
+      this.updateUser.picture = this.user.picture;
+    });
+  },
+  methods: {
+    async handleUpdateUser (){
+      await updateUser(this.user.id, this.updateUser);
+      //this.$router.push({name: "profile"});
+      //this.$router.reload();
+    }
+  }
+}
+
+
+
 </script>
 
 <style>
