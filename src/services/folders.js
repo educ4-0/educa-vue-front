@@ -42,7 +42,7 @@ export async function updateFolder(folderId = '', body = {}) {
   }
 }
 
-// TODO
+// TODO - Add Classroom à Pasta
 export async function addClassroomToFolder(folderId = '', classroomId = '') {
   try {
     return (await http.patch(`${BASE_URL}/${folderId}/classrooms/${classroomId}/add-to-folder`, {}, {})).data;

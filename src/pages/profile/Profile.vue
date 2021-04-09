@@ -584,6 +584,16 @@
                         </div>
                       </div>
                     </div> -->
+                    
+                    <!-- TODO - Melhorar a aparência dos botões -->
+                    <button
+                    class= "btn btn-success waves-effect waves-light mt-2"
+                    @click.prevent="handleEnableUser()"
+                    >Ativar</button>
+                    <button
+                    class= "btn btn-success waves-effect waves-light mt-2"
+                    @click.prevent="handleDisableUser()"
+                    >Desativar</button>
                   </div>
 
                   <div class="text-right">
@@ -606,7 +616,7 @@
 </template>
 
 <script>
-import {updateUser, getMe} from "@/services/users";
+import {updateUser, getMe, enableUser, disableUser} from "@/services/users";
 export default {
   data() {
     return {
@@ -628,8 +638,17 @@ export default {
   methods: {
     async handleUpdateUser (){
       await updateUser(this.user.id, this.updateUser);
-      //this.$router.push({name: "profile"});
-      //this.$router.reload();
+      this.$router.go();
+    },
+
+    async handleEnableUser() {
+      await enableUser(this.user.id);
+      this.$router.go();
+    },
+
+    async handleDisableUser() {
+      await disableUser(this.user.id);
+      this.$router.go();
     }
   }
 }

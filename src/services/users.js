@@ -10,7 +10,6 @@ export async function getMe() {
   }
 }
 
-// TODO
 export async function updateUser(id = '', body = {}) {
   try {
     return (await http.patch(`${BASE_URL}/${id}`, body, {})).data;
@@ -19,19 +18,17 @@ export async function updateUser(id = '', body = {}) {
   }
 }
 
-// TODO
-export async function enableUser(id = '', body = {}) {
+export async function enableUser(id = '') {
   try {
-    return (await http.patch(`${BASE_URL}/${id}/enable`, body, {})).data;
+    return (await http.patch(`${BASE_URL}/${id}/enable`, {}, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
 }
 
-// TODO
-export async function disableUser(id = '', body = {}) {
+export async function disableUser(id = '') {
   try {
-    return (await http.patch(`${BASE_URL}/${id}/disable`, body, {})).data;
+    return (await http.patch(`${BASE_URL}/${id}/disable`, {}, {})).data;
   } catch (error) {
     throw error.response ? error.response.data : error;
   }
