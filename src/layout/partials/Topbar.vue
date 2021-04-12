@@ -373,7 +373,7 @@
           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-account-circle-line"></i>
-              <span>My Account</span>
+              <router-link to="/profile"><span class="link-color">My Account</span></router-link>
             </a>
 
             <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -646,3 +646,9 @@ export default {
   },
 };
 </script>
+
+<style>
+  .link-color {
+    color: #6c757d;
+  }
+</style>

@@ -585,17 +585,7 @@
                       </div>
                     </div> -->
                     
-                    <!-- TODO - Melhorar a aparência dos botões -->
-                    <button
-                    class= "btn btn-success waves-effect waves-light mt-2"
-                    @click.prevent="handleEnableUser()"
-                    >Ativar</button>
-                    <button
-                    class= "btn btn-success waves-effect waves-light mt-2"
-                    @click.prevent="handleDisableUser()"
-                    >Desativar</button>
                   </div>
-
                   <div class="text-right">
                     <button
                       type="submit"
@@ -603,6 +593,17 @@
                       @click.prevent="handleUpdateUser()"
                     >
                       <i class="mdi mdi-content-save"></i> Salvar
+                    </button>
+                  <!-- TODO - Melhorar a aparência e localização dos botões -->
+                    <button
+                      class= "btn btn-success waves-effect waves-light mt-2 mr-1 ml-1"
+                      @click.prevent="handleEnableUser()"
+                      >Ativar
+                    </button>
+                    <button
+                      class= "btn btn-success waves-effect waves-light mt-2"
+                      @click.prevent="handleDisableUser()"
+                      >Desativar
                     </button>
                   </div>
                 </form>
