@@ -5,7 +5,7 @@
       <div class="sidebar-content">
         <div class="sidebar-icon-menu h-100" data-simplebar>
           <!-- LOGO -->
-          <a href="index.html" class="logo">
+          <a href="/" class="logo">
             <span>
               <img src="../assets/images/logo-sm.png" alt="" height="28" />
             </span>

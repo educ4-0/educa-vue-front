@@ -2,7 +2,7 @@
   <div class="left-side-menu">
     <!-- LOGO -->
     <div class="logo-box">
-      <a href="index.html" class="logo logo-dark text-center">
+      <a href="/" class="logo logo-dark text-center">
         <span class="logo-sm">
           <img src="@/assets/images/logo-sm-dark.png" alt="" height="24" />
           <!-- <span class="logo-lg-text-light">Minton</span> -->
@@ -13,7 +13,7 @@
         </span>
       </a>
 
-      <a href="index.html" class="logo logo-light text-center">
+      <a href="/" class="logo logo-light text-center">
         <span class="logo-sm">
           <img src="@/assets/images/logo-sm.png" alt="" height="24" />
         </span>

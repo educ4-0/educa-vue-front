@@ -76,7 +76,8 @@
               <img
                 style="margin-top: -31px"
                 class="card-img-top img-fluid"
-                src="../../assets/images/small/img-2.jpg"
+                src="https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_960_720.jpg"
+                
                 alt="Card image cap"
               />
               <div class="card-body">
@@ -152,11 +153,13 @@ export default {
       },
       folders: [],
       classrooms: [],
+      image: "",
     };
   },
   mounted() {
     this.getFolders();
     this.getClassrooms();
+    this.image = `./static/${Math.floor(Math.random() * 4)+1}.png`;
   },
   methods: {
     async getClassrooms() {
@@ -170,6 +173,9 @@ export default {
       this.folder.name = "";
       this.getFolders();
     },
+    // getImgUrl() {
+    // return require('../assets/classrooms-img/'+(Math.floor(Math.random() * 4) + 1)+".png");
+    // },
   },
 };
 </script>

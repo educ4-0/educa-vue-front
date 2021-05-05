@@ -7,7 +7,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle arrow-none"
-                href="#"
+                href="/"
                 id="topnav-dashboard"
                 role="button"
                 data-toggle="dropdown"
@@ -18,7 +18,7 @@
                 <div class="arrow-down"></div>
               </a>
               <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
-                <a href="index.html" class="dropdown-item">Sales</a>
+                <a href="/" class="dropdown-item">Sales</a>
                 <a href="dashboard-crm.html" class="dropdown-item">CRM</a>
                 <a href="dashboard-analytics.html" class="dropdown-item"
                   >Analytics</a

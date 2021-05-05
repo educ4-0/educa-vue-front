@@ -28,9 +28,8 @@
       >
         <img
           class="img-fluid"
-          src="../../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
+          :src="image"
           alt=""
-          srcset="../../assets/images/jeshoots-com--2vD8lIhdnw-unsplash.jpg"
         />
       </div>
       <div class="col-8">
@@ -180,10 +179,12 @@ export default {
     return {
       classroom: {},
       weeks: [],
+      image: "",
     }
   },
   async mounted() {
     await this.getClassroom(this.$router.history.current.params.id);
+    this.image = `../../assets/images/classrooms-img/${Math.floor(Math.random() * 4)}.png`;
     this.getWeeks();
   },
   methods: {
