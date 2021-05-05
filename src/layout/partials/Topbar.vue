@@ -9,7 +9,7 @@
                 <input
                   type="search"
                   class="form-control"
-                  placeholder="Search..."
+                  placeholder="Procurar..."
                   id="top-search"
                 />
                 <div class="input-group-append">
@@ -102,7 +102,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Search ..."
+                placeholder="Procurar ..."
                 aria-label="Recipient's username"
               />
             </form>
@@ -266,9 +266,9 @@
               <h5 class="m-0">
                 <span class="float-right">
                   <a href="" class="text-dark">
-                    <small>Clear All</small>
+                    <small>Limpar tudo</small>
                   </a> </span
-                >Notification
+                >Notificações
               </h5>
             </div>
 
@@ -281,8 +281,8 @@
                   <i class="mdi mdi-comment-account-outline"></i>
                 </div>
                 <p class="notify-details">
-                  Doug Dukes commented on Admin Dashboard
-                  <small class="text-muted">1 min ago</small>
+                  Sarah Silva commentou na atividade "Aula 1"
+                  <small class="text-muted">1 min atrás</small>
                 </p>
               </a>
 
@@ -294,9 +294,9 @@
                     alt=""
                   />
                 </div>
-                <p class="notify-details">Mario Drummond</p>
+                <p class="notify-details">Mario Rodrigues</p>
                 <p class="text-muted mb-0 user-msg">
-                  <small>Hi, How are you? What about our next meeting</small>
+                  <small>Nota: Atividade 2</small>
                 </p>
               </a>
 
@@ -308,9 +308,9 @@
                     alt=""
                   />
                 </div>
-                <p class="notify-details">Karen Robinson</p>
+                <p class="notify-details">Karen Livia</p>
                 <p class="text-muted mb-0 user-msg">
-                  <small>Wow ! this admin looks good and awesome design</small>
+                  <small>Novo material adicionado</small>
                 </p>
               </a>
 
@@ -319,12 +319,12 @@
                   <i class="mdi mdi-account-plus"></i>
                 </div>
                 <p class="notify-details">
-                  New user registered.
-                  <small class="text-muted">5 hours ago</small>
+                  Lucia Santos
+                  <small class="text-muted">Comunicado: Novo conteúdo</small>
                 </p>
               </a>
 
-              <a href="javascript:void(0);" class="dropdown-item notify-item">
+              <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <div class="notify-icon bg-info">
                   <i class="mdi mdi-comment-account-outline"></i>
                 </div>
@@ -343,14 +343,14 @@
                   <b>Admin</b>
                   <small class="text-muted">13 days ago</small>
                 </p>
-              </a>
+              </a> -->
             </div>
 
             <a
               href="javascript:void(0);"
               class="dropdown-item text-center text-primary notify-item notify-all"
             >
-              View all
+              Ver tudo
               <i class="fe-arrow-right"></i>
             </a>
           </div>
@@ -373,10 +373,10 @@
           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-account-circle-line"></i>
-              <router-link to="/profile"><span class="link-color">My Account</span></router-link>
+              <router-link to="/profile"><span class="link-color">Minha conta</span></router-link>
             </a>
 
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-settings-3-line"></i>
               <span>Settings</span>
             </a>
@@ -392,7 +392,7 @@
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-lock-line"></i>
               <span>Lock Screen</span>
-            </a>
+            </a> -->
 
             <div class="dropdown-divider"></div>
 

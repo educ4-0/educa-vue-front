@@ -47,16 +47,16 @@
             </a>
 
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="fe-settings mr-1"></i>
               <span>Settings</span>
-            </a>
+            </a> -->
 
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="fe-lock mr-1"></i>
               <span>Lock Screen</span>
-            </a>
+            </a> -->
 
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
