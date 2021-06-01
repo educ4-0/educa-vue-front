@@ -6,15 +6,15 @@ import "./main-css"
 
 import App from "./App";
 
-import router from "./router/index";
+import router from "./router";
 
-import i18n from "./i18n"
+import i18n from "./locales"
+
 import './registerServiceWorker'
 
 Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
 
-/* eslint-disable no-new */
 new Vue({
   router,
   i18n,

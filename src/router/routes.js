@@ -1,20 +1,21 @@
 // Layouts
 import Layout from "@/layout/Layout.vue";
 import PlannerLayout from "@/layout/PlannerLayout.vue";
-import BigPictureLayout from "@/layout/BigPictureLayout.vue";
+import SignInLayout from "@/layout/SignInLayout.vue";
 
 const routes = [
   {
     path: "/",
     redirect: "/classrooms",
+    name: "index"
   },
   {
-    path: "/signin",
-    component: BigPictureLayout,
+    path: "/sign-in",
+    component: SignInLayout,
     children: [
       {
         path: "/",
-        name: "signin",
+        name: "sign-in",
         component: () => import("@/pages/auth/SignIn.vue")
       }
     ]

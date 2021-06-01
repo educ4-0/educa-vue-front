@@ -373,7 +373,9 @@
           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
             <a href="javascript:void(0);" class="dropdown-item notify-item">
               <i class="ri-account-circle-line"></i>
-              <router-link to="/profile"><span class="link-color">Minha conta</span></router-link>
+              <router-link to="/profile"
+                ><span class="link-color">Minha conta</span></router-link
+              >
             </a>
 
             <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -620,8 +622,8 @@
 </template>
 
 <script>
-import { isLoggedIn, logout } from "@/services/oauth";
-import { getMe } from "@/services/users";
+import { users, auth } from "@/services";
+
 export default {
   data() {
     return {
@@ -629,26 +631,23 @@ export default {
     };
   },
   created() {
-    if (!isLoggedIn()) {
-      logout();
-      this.$router.push({ name: "signin" });
-      return;
-    }
-    getMe().then((res) => {
-      this.user = res;
-    });
+    this.getMe();
   },
   methods: {
-    handleLogout() {
-      logout();
-      this.$router.push({ name: "signin" });
+    logout() {
+      auth.logout();
+      this.$router.push({ name: "sign-in" });
+    },
+
+    getMe() {
+      return users.getMe().then((res) => (this.user = res));
     },
   },
 };
 </script>
 
 <style>
-  .link-color {
-    color: #6c757d;
-  }
+.link-color {
+  color: #6c757d;
+}
 </style>

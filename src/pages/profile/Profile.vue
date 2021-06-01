@@ -16,8 +16,8 @@
       </div>
     </div> -->
 
-    {{user}}
-    {{updateUser}}
+    {{ user }}
+    {{ updateUser }}
 
     <div class="row mt-2">
       <div class="col-lg-4 col-xl-4">
@@ -29,8 +29,8 @@
               alt="profile-image"
             />
 
-            <h4 class="mt-3 mb-0">{{user.name}}</h4>
-            <p class="text-muted">{{user.username}}</p>
+            <h4 class="mt-3 mb-0">{{ user.name }}</h4>
+            <p class="text-muted">{{ user.username }}</p>
 
             <button
               type="button"
@@ -295,7 +295,9 @@
                         <td>01/01/2015</td>
                         <td>10/15/2018</td>
                         <td>
-                          <span class="badge badge-info">Trabalho em progresso</span>
+                          <span class="badge badge-info"
+                            >Trabalho em progresso</span
+                          >
                         </td>
                         <td>Halette Boivin</td>
                       </tr>
@@ -343,7 +345,8 @@
               <div class="tab-pane" id="settings">
                 <form>
                   <h5 class="mb-3 text-uppercase bg-light p-2">
-                    <i class="mdi mdi-account-circle mr-1"></i> Informação pessoal
+                    <i class="mdi mdi-account-circle mr-1"></i> Informação
+                    pessoal
                   </h5>
 
                   <div class="row">
@@ -584,7 +587,6 @@
                         </div>
                       </div>
                     </div> -->
-                    
                   </div>
                   <div class="text-right">
                     <button
@@ -594,16 +596,18 @@
                     >
                       <i class="mdi mdi-content-save"></i> Salvar
                     </button>
-                  <!-- TODO - Melhorar a aparência e localização dos botões -->
+                    <!-- TODO - Melhorar a aparência e localização dos botões -->
                     <button
-                      class= "btn btn-success waves-effect waves-light mt-2 mr-1 ml-1"
+                      class="btn btn-success waves-effect waves-light mt-2 mr-1 ml-1"
                       @click.prevent="handleEnableUser()"
-                      >Ativar
+                    >
+                      Ativar
                     </button>
                     <button
-                      class= "btn btn-success waves-effect waves-light mt-2"
+                      class="btn btn-success waves-effect waves-light mt-2"
                       @click.prevent="handleDisableUser()"
-                      >Desativar
+                    >
+                      Desativar
                     </button>
                   </div>
                 </form>
@@ -617,27 +621,27 @@
 </template>
 
 <script>
-import {updateUser, getMe, enableUser, disableUser} from "@/services/users";
+// import {updateUser, getMe, enableUser, disableUser} from "@/services/users";
 export default {
   data() {
     return {
       user: {},
       renameUser: false,
       updateUser: {
-        name: '',
-        picture: ''
-      }
+        name: "",
+        picture: "",
+      },
     };
   },
-  mounted () {
-    getMe().then(res => {
-      this.user = res;
-      this.updateUser.name = this.user.name;
-      this.updateUser.picture = this.user.picture;
-    });
+  mounted() {
+    // getMe().then(res => {
+    //   this.user = res;
+    //   this.updateUser.name = this.user.name;
+    //   this.updateUser.picture = this.user.picture;
+    // });
   },
   methods: {
-    async handleUpdateUser (){
+    async handleUpdateUser() {
       await updateUser(this.user.id, this.updateUser);
       this.$router.go();
     },
@@ -650,12 +654,9 @@ export default {
     async handleDisableUser() {
       await disableUser(this.user.id);
       this.$router.go();
-    }
-  }
-}
-
-
-
+    },
+  },
+};
 </script>
 
 <style>

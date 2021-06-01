@@ -2,7 +2,7 @@ import http from "./http";
 
 const BASE_URL = 'users';
 
-export async function getMe() {
+export const getMe = async () => {
   try {
     return (await http.get(`${BASE_URL}/me`, {})).data;
   } catch (error) {

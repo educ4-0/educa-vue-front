@@ -6,9 +6,7 @@
         <div class="content">
           <Topbar />
           <div class="container-fluid">
-
             <router-view></router-view>
-
           </div>
         </div>
         <Footer />
@@ -27,7 +25,17 @@ import RightSidebar from "./partials/RightSidebar";
 import Footer from "./partials/Footer";
 import Topbar from "./partials/Topbar";
 
+import { auth } from "@/services";
+
 export default {
+  created() {
+    if (!auth.isLoggedIn()) {
+      auth.logout();
+      this.$router.push({ name: "sign-in" });
+      return;
+    }
+  },
+
   components: {
     LeftSidebar,
     RightSidebar,
